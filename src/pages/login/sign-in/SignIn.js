@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,14 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+
+/*global FB*/
+
+function FacebookButton() {
+  return <div class="fb-login-button" data-size="medium" data-button-type="login_with"
+   data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true"
+  data-width=""></div>
+}
 
 function Copyright() {
   return (
@@ -50,6 +58,27 @@ export default function SignIn() {
   const classes = useStyles();
 
   return (
+    useEffect(() => {
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '308512096809543',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v7.0'
+        });
+          
+        FB.AppEvents.logPageView();   
+      };
+      
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    }),
+
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -95,6 +124,8 @@ export default function SignIn() {
           >
             Sign In
           </Button>
+          <FacebookButton>
+          </FacebookButton>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
