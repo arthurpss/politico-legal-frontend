@@ -115,6 +115,8 @@ export default function SignIn() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
+          <FacebookButton>
+          </FacebookButton>
           <Button
             type="submit"
             fullWidth
@@ -124,8 +126,6 @@ export default function SignIn() {
           >
             Sign In
           </Button>
-          <FacebookButton>
-          </FacebookButton>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
