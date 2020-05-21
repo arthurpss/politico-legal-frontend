@@ -1,40 +1,51 @@
-import React from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-  } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // Import de Pages & Components
-import Blog from './pages/main/Blog';
-import SignIn from './pages/login/sign-in/SignIn';
-import SignUp from './pages/login/sign-up/SignUp';
-
-const createBrowserHistory = require('history').createBrowserHistory;
-
-const history = createBrowserHistory();
+import Blog from "./pages/main/Blog";
+import SignIn from "./pages/login/sign-in/SignIn";
+import SignUp from "./pages/login/sign-up/SignUp";
+import Album from "./pages/album/Album";
 
 const routes = [
-    {
-        path: "/sign-in",
-        component: SignIn
-    },
-    {
-        path: "/sign-up",
-        component: SignUp
-    }
-]
+  {
+    key: "index",
+    path: "/",
+    component: Blog,
+    exact: true,
+  },
+  {
+    key: "login",
+    path: "/login",
+    component: SignIn,
+    exact: false,
+  },
+  {
+    key: "cadastro",
+    path: "/cadastro",
+    component: SignUp,
+    exact: false,
+  },
+  {
+    key: "noticias",
+    path: "/noticias",
+    component: Album,
+    exact: false,
+  },
+];
 
-const Routes = () => (
-    <Router history={history}>
-        <Switch>
-            {
-                routes.map(route => <Route path={route.path} component={route.component}></Route>)
-            }
-            <Route exact path="" component={Blog} />
-            <Route exact path="/sign-in" component={SignIn} />
-            <Route exact path="/sign-up" component={SignUp} />
-        </Switch>
+export default function Routes() {
+  return (
+    <Router>
+      <Switch>
+        {routes.map((route) => (
+          <Route
+            key={route.key}
+            path={route.path}
+            component={route.component}
+            exact={route.exact}
+          ></Route>
+        ))}
+      </Switch>
     </Router>
-);
-
-export default Routes;
+  );
+}

@@ -1,11 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import Markdown from './Markdown';
-import { FacebookShareButton, FacebookIcon } from 'react-share';
+import React from "react";
+import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
+import Markdown from "./Markdown";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+} from "react-share";
 
 const useStyles = makeStyles((theme) => ({
   markdown: {
@@ -19,7 +24,7 @@ export default function Main(props) {
   const { posts, title } = props;
 
   return (
-      <Grid item xs={12} md={8}>
+    <Grid item xs={12} md={8}>
       <Typography variant="h6" gutterBottom>
         {title}
       </Typography>
@@ -29,10 +34,14 @@ export default function Main(props) {
           {post}
         </Markdown>
       ))}
-      <FacebookShareButton url="google.com">
+      <FacebookShareButton url="politicolegal.org">
         Compartilhar
-          <FacebookIcon size={32} round={true}></FacebookIcon>
+        <FacebookIcon size={32} round={true}></FacebookIcon>
       </FacebookShareButton>
+      <TwitterShareButton url="politicolegal.org">
+        Compartilhar
+        <TwitterIcon size={32} round={true}></TwitterIcon>
+      </TwitterShareButton>
     </Grid>
   );
 }
