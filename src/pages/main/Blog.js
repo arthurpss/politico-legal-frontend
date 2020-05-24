@@ -115,7 +115,7 @@ export default function Blog() {
           </Grid>
         </main>
       </Container>
-      <Footer title="Create by:" description="Arthur Bastos,Carlos Alexandre,Murilo Kronbauer e Rafael Guido" />
+      <Footer title="Created by:" description="Arthur Passos, Carlos Alexandre, Murilo Kronbauer e Rafael Guido" />
     </div>
   );
 }
