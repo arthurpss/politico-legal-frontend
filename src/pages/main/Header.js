@@ -32,7 +32,7 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <Button size="small">Subscribe</Button>
+        <Button size="small">Cadastro</Button>
         <Typography
           component="h2"
           variant="h5"
