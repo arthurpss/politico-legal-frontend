@@ -30,28 +30,28 @@ const sections = [
 ];
 
 const mainFeaturedPost = {
-  title: 'Title of a longer featured blog post',
+  title: 'Título da postagem',
   description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    "Várias linhas de texto que formam o lede, informando novos leitores de maneira rápida e eficiente sobre o que há de mais interessante no conteúdo deste post.",
   image: 'https://source.unsplash.com/random',
   imgText: 'main image description',
-  linkText: 'Continue reading…',
+  linkText: 'Continue lendo…',
 };
 
 const featuredPosts = [
   {
-    title: 'Featured post',
+    title: 'Postagem em destaque',
     date: 'Nov 12',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      'Este é um cartão mais amplo, com o texto de suporte abaixo como uma entrada natural para conteúdo adicional.',
     image: 'https://source.unsplash.com/random',
     imageText: 'Image Text',
   },
   {
-    title: 'Post title',
+    title: 'Título da postagem',
     date: 'Nov 11',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      'Este é um cartão mais amplo, com o texto de suporte abaixo como uma entrada natural para conteúdo adicional.',
     image: 'https://source.unsplash.com/random',
     imageText: 'Image Text',
   },
@@ -60,21 +60,21 @@ const featuredPosts = [
 const posts = [post1, post2, post3];
 
 const sidebar = {
-  title: 'About',
+  title: 'Sobre',
   description:
-    'Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.',
+    'Plataforma onde os canditados a cargos eletivos podem se aproximar mais dos seus eleitores.',
   archives: [
-    { title: 'March 2020', url: '#' },
-    { title: 'February 2020', url: '#' },
-    { title: 'January 2020', url: '#' },
-    { title: 'November 1999', url: '#' },
-    { title: 'October 1999', url: '#' },
-    { title: 'September 1999', url: '#' },
-    { title: 'August 1999', url: '#' },
-    { title: 'July 1999', url: '#' },
-    { title: 'June 1999', url: '#' },
-    { title: 'May 1999', url: '#' },
-    { title: 'April 1999', url: '#' },
+    { title: 'Março 2020', url: '#' },
+    { title: 'Fevereiro 2020', url: '#' },
+    { title: 'Janeiro 2020', url: '#' },
+    { title: 'Novembro 1999', url: '#' },
+    { title: 'Outubro 1999', url: '#' },
+    { title: 'Setembro 1999', url: '#' },
+    { title: 'Agosto 1999', url: '#' },
+    { title: 'Julho 1999', url: '#' },
+    { title: 'Junho 1999', url: '#' },
+    { title: 'Maio 1999', url: '#' },
+    { title: 'Abril 1999', url: '#' },
   ],
   social: [
     { name: 'GitHub', icon: GitHubIcon },
@@ -109,7 +109,7 @@ export default function Blog() {
           </Grid>
         </main>
       </Container>
-      <Footer title="Created by:" description="Arthur Passos, Carlos Alexandre, Murilo Kronbauer e Rafael Guido" />
+      <Footer title="Criado por" description="Arthur Passos, Carlos Alexandre, Murilo Kronbauer e Rafael Guido" />
     </div>
   );
 }
