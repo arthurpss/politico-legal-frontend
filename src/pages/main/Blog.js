@@ -23,9 +23,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sections = [
-  { title: 'Notícias', url: '#' },
-  { title: 'Posts', url: '#' },
-  { title: 'Portifólio', url: '#' },
+  { title: 'Notícias', url: '/noticias' },
+  { title: 'Posts', url: '' },
+  { title: 'Portifólio', url: '/portifolio' },
 
 ];
 

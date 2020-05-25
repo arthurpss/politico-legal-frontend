@@ -34,11 +34,15 @@ export default function Main(props) {
           {post}
         </Markdown>
       ))}
-      <FacebookShareButton url="politicolegal.org">
+      <FacebookShareButton url="politicolegal.org" quote="Teste" hashtag="PoliticoLegal">
         Compartilhar
         <FacebookIcon size={32} round={true}></FacebookIcon>
       </FacebookShareButton>
-      <TwitterShareButton url="politicolegal.org">
+      <TwitterShareButton 
+        url="politicolegal.org"
+        title="Polico Legal"
+        hashtag="PoliticoLegal"
+        related="@Politicolegal">
         Compartilhar
         <TwitterIcon size={32} round={true}></TwitterIcon>
       </TwitterShareButton>

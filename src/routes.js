@@ -31,6 +31,12 @@ const routes = [
     component: Album,
     exact: false,
   },
+  {
+    key: "portifolio",
+    path: "/portifolio",
+    component: Album,
+    exact: false,
+  },
 ];
 
 export default function Routes() {
