@@ -41,8 +41,7 @@ export default function Main(props) {
       <TwitterShareButton 
         url="politicolegal.org"
         title="Polico Legal"
-        hashtag="PoliticoLegal"
-        related="@Politicolegal">
+        hashtag="PoliticoLegal">
         Compartilhar
         <TwitterIcon size={32} round={true}></TwitterIcon>
       </TwitterShareButton>
