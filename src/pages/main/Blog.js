@@ -77,15 +77,15 @@ const sidebar = {
     { title: 'Abril 1999', url: '#' },
   ],
   social: [
-    { name: 'GitHub', icon: GitHubIcon },
-    { name: 'Twitter', icon: TwitterIcon },
-    { name: 'Facebook', icon: FacebookIcon },
+    { name: 'GitHub', icon: GitHubIcon, url: 'https://github.com/arthurpss/politico-legal-frontend' },
+    { name: 'Twitter', icon: TwitterIcon, url: 'https://twitter.com/politico_legal' },
+    { name: 'Facebook', icon: FacebookIcon, url: 'https://www.facebook.com/Politico-Legal-102645471465398' }
   ],
 };
 
 export default function Blog() {
   const classes = useStyles();
-
+ 
   return (
     <div>
       <CssBaseline />

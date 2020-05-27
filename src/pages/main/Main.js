@@ -5,12 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Markdown from "./Markdown";
-import {
-  FacebookShareButton,
-  FacebookIcon,
-  TwitterShareButton,
-  TwitterIcon,
-} from "react-share";
 
 const useStyles = makeStyles((theme) => ({
   markdown: {
@@ -29,22 +23,17 @@ export default function Main(props) {
         {title}
       </Typography>
       <Divider />
-      {posts.map((post) => (
-        <Markdown className={classes.markdown} key={post.substring(0, 40)}>
-          {post}
-        </Markdown>
-      ))}
-      <FacebookShareButton url="politicolegal.org" quote="Teste" hashtag="PoliticoLegal">
-        Compartilhar
-        <FacebookIcon size={32} round={true}></FacebookIcon>
-      </FacebookShareButton>
-      <TwitterShareButton 
-        url="politicolegal.org"
-        title="Polico Legal"
-        hashtag="PoliticoLegal">
-        Compartilhar
-        <TwitterIcon size={32} round={true}></TwitterIcon>
-      </TwitterShareButton>
+      {posts.map((post) =>{
+        fetch(post)
+        .then(response => response.text())
+        .then(text => {
+          return (
+            <Markdown className={classes.markdown} key={post.substring(0, 40)}>
+            {post}
+          </Markdown>
+          )
+        })
+      })}
     </Grid>
   );
 }
