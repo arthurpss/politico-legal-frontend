@@ -49,16 +49,6 @@ export default function FeaturedPost(props) {
               <Typography variant="subtitle1" color="primary">
                 Continue lendo…
               </Typography>
-              <FacebookShareButton url="politico-legal.netlify.app" quote={post.title} hashtag="PoliticoLegal"/>
-              <FacebookIcon size={32} round={true}></FacebookIcon>
-              <TwitterShareButton 
-                url="politico-legal.netlify.app"
-                title={post.title}
-                hashtag="PoliticoLegal"/>
-              <TwitterIcon size={32} round={true}></TwitterIcon>
-              <Typography variant="subtitle1" color="textSecondary">
-                Compartilhe
-              </Typography>
             </CardContent>
           </div>
           <Hidden xsDown>
@@ -66,6 +56,20 @@ export default function FeaturedPost(props) {
           </Hidden>
         </Card>
       </CardActionArea>
+      <Grid item xs={12} md={6}>
+      <FacebookShareButton url="politico-legal.netlify.app" quote={post.title} hashtag="PoliticoLegal">
+      <FacebookIcon size={32} round={true}></FacebookIcon>
+        </FacebookShareButton>
+              <TwitterShareButton 
+                url="politico-legal.netlify.app"
+                title={post.title}
+                hashtag="PoliticoLegal">
+                  <TwitterIcon size={32} round={true}></TwitterIcon>
+                  </TwitterShareButton>
+              <Typography variant="subtitle1" color="textSecondary">
+                Compartilhe
+              </Typography>
+      </Grid>
     </Grid>
   );
 }
