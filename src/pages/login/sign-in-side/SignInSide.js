@@ -18,10 +18,11 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-       Político Legal
-      </Link>{' '}
+        Político Legal
+      </Link>
+      {' '}
       {new Date().getFullYear()}
-      {'.'}
+      .
     </Typography>
   );
 }
@@ -116,7 +117,7 @@ export default function SignInSide() {
               </Grid>
               <Grid item>
                 <Link href="#" variant="body2">
-                  {"Ainda não tem uma conta? Cadastre-se"}
+                  Ainda não tem uma conta? Cadastre-se
                 </Link>
               </Grid>
             </Grid>

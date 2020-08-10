@@ -32,7 +32,7 @@ const sections = [
 const mainFeaturedPost = {
   title: 'Título da postagem',
   description:
-    "Várias linhas de texto que formam o lede, informando novos leitores de maneira rápida e eficiente sobre o que há de mais interessante no conteúdo deste post.",
+    'Várias linhas de texto que formam o lede, informando novos leitores de maneira rápida e eficiente sobre o que há de mais interessante no conteúdo deste post.',
   image: 'https://source.unsplash.com/random',
   imgText: 'main image description',
   linkText: 'Continue lendo…',
@@ -79,13 +79,13 @@ const sidebar = {
   social: [
     { name: 'GitHub', icon: GitHubIcon, url: 'https://github.com/arthurpss/politico-legal-frontend' },
     { name: 'Twitter', icon: TwitterIcon, url: 'https://twitter.com/politico_legal' },
-    { name: 'Facebook', icon: FacebookIcon, url: 'https://www.facebook.com/Politico-Legal-102645471465398' }
+    { name: 'Facebook', icon: FacebookIcon, url: 'https://www.facebook.com/Politico-Legal-102645471465398' },
   ],
 };
 
 export default function Blog() {
   const classes = useStyles();
- 
+
   return (
     <div>
       <CssBaseline />
