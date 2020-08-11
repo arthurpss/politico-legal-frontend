@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import api from '../../../services/api';
 
 /* global FB */
 
@@ -63,8 +64,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function SignIn() {
   const classes = useStyles();
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  function handleLogin() {
+    api.post('login', {
+      email, password
+    }).then(r => {
+      if (r.status === 200) {
+        setLoggedIn(true);
+      } else {
+        setIsError(true);
+      }
+    }).catch(e => {
+      console.log(e);
+      setIsError(true);
+    })
+  }
+
 
   return (
     useEffect(() => {
@@ -75,10 +98,10 @@ export default function SignIn() {
           xfbml: true,
           version: 'v7.0',
         });
-
+  
         FB.AppEvents.logPageView();
       };
-
+  
       (function (d, s, id) {
         let js;
         const fjs = d.getElementsByTagName(s)[0];
@@ -112,6 +135,7 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={e => setEmail(e.target.value)}
             />
             <TextField
               variant="outlined"
@@ -123,6 +147,7 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={e => setPassword(e.target.value)}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -135,6 +160,7 @@ export default function SignIn() {
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={handleLogin}
             >
               Entrar
             </Button>
