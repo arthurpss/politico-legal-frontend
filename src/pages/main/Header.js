@@ -75,6 +75,6 @@ export default function Header(props) {
 }
 
 Header.propTypes = {
-  sections: PropTypes.array,
-  title: PropTypes.string,
+  sections: PropTypes.arrayOf(PropTypes.object).isRequired,
+  title: PropTypes.string.isRequired,
 };

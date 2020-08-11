@@ -12,8 +12,8 @@ import {
   FacebookShareButton,
   FacebookIcon,
   TwitterShareButton,
-  TwitterIcon,
-} from 'react-share';
+  TwitterIcon
+} from "react-share";
 
 const useStyles = makeStyles({
   card: {
@@ -57,19 +57,18 @@ export default function FeaturedPost(props) {
         </Card>
       </CardActionArea>
       <Grid item xs={12} md={6}>
-        <FacebookShareButton url="politico-legal.netlify.app" quote={post.title} hashtag="PoliticoLegal">
-          <FacebookIcon size={32} round />
+      <FacebookShareButton url="politico-legal.netlify.app" quote={post.title} hashtag="PoliticoLegal">
+      <FacebookIcon size={32} round={true}></FacebookIcon>
         </FacebookShareButton>
-        <TwitterShareButton
-          url="politico-legal.netlify.app"
-          title={post.title}
-          hashtag="PoliticoLegal"
-        >
-          <TwitterIcon size={32} round />
-        </TwitterShareButton>
-        <Typography variant="subtitle1" color="textSecondary">
-          Compartilhe
-        </Typography>
+              <TwitterShareButton 
+                url="politico-legal.netlify.app"
+                title={post.title}
+                hashtag="PoliticoLegal">
+                  <TwitterIcon size={32} round={true}></TwitterIcon>
+                  </TwitterShareButton>
+              <Typography variant="subtitle1" color="textSecondary">
+                Compartilhe
+              </Typography>
       </Grid>
     </Grid>
   );
